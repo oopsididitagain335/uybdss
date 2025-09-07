@@ -239,6 +239,12 @@
       box-shadow: 0 10px 30px rgba(255, 47, 126, 0.4);
     }
 
+    .social-links {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
     .discord-cta {
       margin-top: 30px;
       text-align: center;
@@ -303,6 +309,10 @@
       
       .apply-container h1 {
         font-size: 2rem;
+      }
+      
+      .social-links {
+        grid-template-columns: 1fr;
       }
       
       .nav-brand img {
@@ -377,13 +387,35 @@
         </div>
         
         <div class="form-group">
-          <label for="experience">Gaming Experience</label>
-          <textarea id="experience" name="experience" required placeholder="Tell us about your competitive experience, teams you've played for, and achievements"></textarea>
+          <label for="clips">Clip Links or Tracker</label>
+          <textarea id="clips" name="clips" required placeholder="Provide links to your best gameplay clips, tracker profile, or highlights (YouTube, Streamable, Tracker.gg, etc.)"></textarea>
         </div>
         
         <div class="form-group">
           <label for="why">Why Worship Esports?</label>
           <textarea id="why" name="why" required placeholder="Why do you want to join Worship Esports? What can you bring to our team?"></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label>Social Media Links (Required)</label>
+          <div class="social-links">
+            <div class="form-group">
+              <label for="discord">Discord Username</label>
+              <input type="text" id="discord" name="discord" required placeholder="Your Discord username and tag">
+            </div>
+            <div class="form-group">
+              <label for="twitter">Twitter/X Handle</label>
+              <input type="text" id="twitter" name="twitter" required placeholder="@yourhandle">
+            </div>
+            <div class="form-group">
+              <label for="twitch">Twitch Username</label>
+              <input type="text" id="twitch" name="twitch" placeholder="Your Twitch username (if applicable)">
+            </div>
+            <div class="form-group">
+              <label for="instagram">Instagram Handle</label>
+              <input type="text" id="instagram" name="instagram" placeholder="@yourhandle">
+            </div>
+          </div>
         </div>
         
         <button type="submit" class="submit-btn">SUBMIT APPLICATION</button>
