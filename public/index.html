@@ -60,13 +60,10 @@
       pointer-events: none;
     }
 
-    .preloader h1 {
-      font-size: 3rem;
-      font-weight: 800;
-      letter-spacing: 2px;
-      background: linear-gradient(90deg, var(--accent), #ff80b3);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    .preloader img {
+      height: 120px;
+      width: auto;
+      filter: drop-shadow(0 0 20px rgba(255, 47, 126, 0.5));
     }
 
     .nav {
@@ -346,6 +343,10 @@
         left: 5vw;
         right: 5vw;
       }
+
+      .preloader img {
+        height: 100px;
+      }
     }
 
     @media (max-width: 768px) {
@@ -376,13 +377,17 @@
       .hero {
         padding: 60px 5vw 100px;
       }
+
+      .preloader img {
+        height: 80px;
+      }
     }
   </style>
 </head>
 <body>
 
   <div class="preloader">
-    <h1>WORSHIP</h1>
+    <img src="/monkey2.png" alt="Worship Esports Logo">
   </div>
 
   <nav class="nav">
