@@ -98,12 +98,14 @@
     }
 
     .nav-brand {
-      font-weight: 800;
-      font-size: 1.8rem;
-      letter-spacing: -0.5px;
-      background: linear-gradient(90deg, var(--accent), #ff80b3);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-brand img {
+      height: 48px;
+      max-height: 100%;
+      width: auto;
     }
 
     .nav-list {
@@ -347,8 +349,8 @@
     }
 
     @media (max-width: 768px) {
-      .nav-brand {
-        font-size: 1.5rem;
+      .nav-brand img {
+        height: 40px;
       }
 
       .nav-list {
@@ -384,7 +386,9 @@
   </div>
 
   <nav class="nav">
-    <div class="nav-brand">WORSHIP</div>
+    <div class="nav-brand">
+      <img src="/monkey2.png" alt="Worship Esports Logo">
+    </div>
     <ul class="nav-list">
       <li><a href="/">HOME</a></li>
       <li><a href="/about">ABOUT</a></li>
