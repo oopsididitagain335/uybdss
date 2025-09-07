@@ -265,14 +265,13 @@
       height: 420px;
       border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-      border: 1px solid var(--border);
     }
 
     .hero-video video {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      pointer-events: none;
     }
 
     footer {
@@ -414,9 +413,8 @@
         <div class="hero-video">
           <video autoplay muted loop playsinline>
             <source src="media/hero-bg.mp4" type="video/mp4">
-            <!-- Fallback if video fails -->
-            <div style="width:100%; height:100%; background:var(--card-bg); display:flex; align-items:center; justify-content:center; color:var(--text-secondary); font-family:monospace; font-size:0.9rem; text-align:center; padding:20px;">
-              [ HERO VIDEO ]<br>WORSHIP ESPORTS 2025
+            <div style="width:100%; height:100%; background:#1a1a1a; display:flex; align-items:center; justify-content:center; color:#555; font-family:monospace; font-size:0.9rem; text-align:center; padding:20px;">
+              [ WORSHIP ESPORTS | 2025 ]
             </div>
           </video>
         </div>
