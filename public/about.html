@@ -60,13 +60,10 @@
       pointer-events: none;
     }
 
-    .preloader h1 {
-      font-size: 3rem;
-      font-weight: 800;
-      letter-spacing: 2px;
-      background: linear-gradient(90deg, var(--accent), #ff80b3);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    .preloader img {
+      height: 120px;
+      width: auto;
+      filter: drop-shadow(0 0 20px rgba(255, 47, 126, 0.5));
     }
 
     .nav {
@@ -164,7 +161,6 @@
 
     main {
       padding-top: 70px;
-      padding-bottom: 100px;
     }
 
     .container {
@@ -276,12 +272,30 @@
     .theme-toggle:hover {
       color: var(--accent);
     }
+
+    @media (max-width: 768px) {
+      .preloader img {
+        height: 80px;
+      }
+
+      .nav-brand img {
+        height: 40px;
+      }
+
+      .page-title {
+        font-size: 3rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+    }
   </style>
 </head>
 <body>
 
   <div class="preloader">
-    <h1>WORSHIP</h1>
+    <img src="/monkey2.png" alt="Worship Esports Logo">
   </div>
 
   <nav class="nav">
