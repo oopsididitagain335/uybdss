@@ -17,6 +17,7 @@
       --text-secondary: #bbb;
       --border: #333;
       --card-bg: #1a1a1a;
+      --card-hover: #252525;
     }
 
     [data-theme="light"] {
@@ -26,6 +27,7 @@
       --text-secondary: #555;
       --border: #ddd;
       --card-bg: #ffffff;
+      --card-hover: #f0f0f0;
     }
 
     * {
@@ -39,6 +41,7 @@
       color: var(--text);
       font-family: 'Barlow', sans-serif;
       transition: background 0.4s ease;
+      line-height: 1.6;
     }
 
     .preloader {
@@ -185,7 +188,17 @@
       animation: fadeUp 0.8s ease forwards 0.3s;
     }
 
-    .leadership-grid {
+    .subtitle {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      max-width: 700px;
+      margin: 0 auto;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.8s ease forwards 0.5s;
+    }
+
+    .roster-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 40px;
@@ -193,18 +206,31 @@
       max-width: 1000px;
     }
 
-    .leader-card {
+    .member-card {
       background: var(--card-bg);
       border-radius: 12px;
       padding: 40px 30px;
       text-align: center;
       opacity: 0;
       transform: translateY(30px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.05);
     }
 
-    .leader-card:nth-child(1) { animation: fadeUp 0.8s ease forwards 0.5s; }
-    .leader-card:nth-child(2) { animation: fadeUp 0.8s ease forwards 0.7s; }
-    .leader-card:nth-child(3) { animation: fadeUp 0.8s ease forwards 0.9s; }
+    .member-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      border-color: rgba(255, 47, 126, 0.3);
+    }
+
+    .member-card:nth-child(1) { animation: fadeUp 0.8s ease forwards 0.5s; }
+    .member-card:nth-child(2) { animation: fadeUp 0.8s ease forwards 0.7s; }
+    .member-card:nth-child(3) { animation: fadeUp 0.8s ease forwards 0.9s; }
+    .member-card:nth-child(4) { animation: fadeUp 0.8s ease forwards 1.1s; }
+    .member-card:nth-child(5) { animation: fadeUp 0.8s ease forwards 1.3s; }
+    .member-card:nth-child(6) { animation: fadeUp 0.8s ease forwards 1.5s; }
 
     .role {
       font-size: 1.1rem;
@@ -213,6 +239,19 @@
       text-transform: uppercase;
       letter-spacing: 1px;
       margin-bottom: 12px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .role::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--accent);
+      opacity: 0.5;
     }
 
     .name {
@@ -227,6 +266,44 @@
       font-size: 1rem;
       color: var(--text-secondary);
       line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .social-links a {
+      color: var(--text-secondary);
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: var(--accent);
+    }
+
+    .member-image {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      background: linear-gradient(45deg, var(--accent), #ff8a00);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      color: white;
+      overflow: hidden;
+    }
+
+    .member-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     @keyframes fadeUp {
@@ -260,6 +337,24 @@
       color: var(--accent);
     }
 
+    .section-title {
+      text-align: center;
+      margin: 60px 0 30px;
+      font-size: 2.5rem;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: var(--accent);
+    }
+
     @media (max-width: 768px) {
       .preloader img {
         height: 80px;
@@ -277,26 +372,41 @@
         font-size: 1.8rem;
       }
 
-      .leadership-grid {
+      .roster-grid {
         gap: 30px;
         padding: 0 20px;
       }
 
-      .leader-card {
+      .member-card {
         padding: 30px 20px;
       }
+
+      .section-title {
+        font-size: 2rem;
+      }
+    }
+
+    .team-section {
+      margin: 100px 0;
+    }
+
+    .team-section p {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 40px;
+      color: var(--text-secondary);
     }
   </style>
 </head>
 <body>
 
   <div class="preloader">
-    <img src="/monkey2.png" alt="Worship Esports Logo">
+    <img src="https://placehold.co/120x120/ff2f7e/ffffff?text=WORSHIP" alt="Worship Esports Logo">
   </div>
 
   <nav class="nav">
     <div class="nav-brand">
-      <img src="/monkey2.png" alt="Worship Esports Logo">
+      <img src="https://placehold.co/48x48/ff2f7e/ffffff?text=WORSHIP" alt="Worship Esports Logo">
     </div>
     <ul class="nav-list">
       <li><a href="/">HOME</a></li>
@@ -312,32 +422,119 @@
   <main>
     <div class="container">
       <div class="page-header">
-        <h1 class="page-title">LEADERSHIP</h1>
+        <h1 class="page-title">TEAM ROSTER</h1>
+        <p class="subtitle">Meet the talented individuals who make Worship Esports great</p>
       </div>
 
-      <div class="leadership-grid">
-        <div class="leader-card">
-          <div class="role">Founder</div>
-          <div class="name">VEZ</div>
-          <div class="bio">Architect of Worship’s vision. Built the foundation. Sets the standard.</div>
-        </div>
+      <div class="team-section">
+        <h2 class="section-title">LEADERSHIP</h2>
+        <p>Our leadership team drives vision, strategy, and execution across all aspects of the organization.</p>
+        
+        <div class="roster-grid">
+          <div class="member-card">
+            <div class="member-image">
+              <i class="fas fa-crown"></i>
+            </div>
+            <div class="role">Founder</div>
+            <div class="name">VEZ</div>
+            <div class="bio">Architect of Worship's vision. Built the foundation. Sets the standard.</div>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-twitch"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
 
-        <div class="leader-card">
-          <div class="role">Board Member</div>
-          <div class="name">KIWI</div>
-          <div class="bio">Drives strategy, growth, and operations. The engine behind the brand.</div>
-        </div>
+          <div class="member-card">
+            <div class="member-image">
+              <i class="fas fa-user-tie"></i>
+            </div>
+            <div class="role">Co Founder</div>
+            <div class="name">KIWI</div>
+            <div class="bio">Drives strategy, growth, and operations. The engine behind the brand.</div>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-twitch"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
 
-        <div class="leader-card">
-          <div class="role">Director of Ops</div>
-          <div class="name">NEATO & STEALTH</div>
-          <div class="bio">Oversee daily execution, logistics, and team operations. The backbone of Worship.</div>
+          <div class="member-card">
+            <div class="member-image">
+              <i class="fas fa-user-friends"></i>
+            </div>
+            <div class="role">Co Founder</div>
+            <div class="name">SNIPPEE</div>
+            <div class="bio">Strategic visionary and team builder. Creates opportunities for growth.</div>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-twitch"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
         </div>
+      </div>
 
-        <div class="leader-card">
-          <div class="role">President</div>
-          <div class="name">REKZO</div>
-          <div class="bio">Leads organizational vision, partnerships, and culture. The face of Worship’s future.</div>
+      <div class="team-section">
+        <h2 class="section-title">EXECUTIVE TEAM</h2>
+        <p>Our executive leadership ensures smooth operations and strategic direction.</p>
+        
+        <div class="roster-grid">
+          <div class="member-card">
+            <div class="member-image">
+              <i class="fas fa-money-bill-wave"></i>
+            </div>
+            <div class="role">CFO</div>
+            <div class="name">CYRO</div>
+            <div class="bio">Financial steward and strategic advisor. Ensures fiscal responsibility.</div>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-twitch"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="member-image">
+              <i class="fas fa-user-shield"></i>
+            </div>
+            <div class="role">DOP</div>
+            <div class="name">NEATO</div>
+            <div class="bio">Operations director responsible for team logistics and execution.</div>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-twitch"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="member-image">
+              <i class="fas fa-user-check"></i>
+            </div>
+            <div class="role">DOP</div>
+            <div class="name">MANIA</div>
+            <div class="bio">Operations lead focusing on team performance and development.</div>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-twitch"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <div class="member-image">
+              <i class="fas fa-user-secret"></i>
+            </div>
+            <div class="role">DOP Update</div>
+            <div class="name">STEALTH</div>
+            <div class="bio">Director of Operations updating and streamlining processes.</div>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-twitch"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -356,10 +553,12 @@
       const themeToggle = document.getElementById('themeToggle');
       const body = document.body;
 
+      // Hide preloader after 1.2 seconds
       setTimeout(() => {
         preloader.classList.add('fade-out');
       }, 1200);
 
+      // Handle scroll effect on navigation
       window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
           nav.classList.add('scrolled');
@@ -368,6 +567,7 @@
         }
       });
 
+      // Theme toggle functionality
       const savedTheme = localStorage.getItem('theme') || 'dark';
       body.setAttribute('data-theme', savedTheme);
 
