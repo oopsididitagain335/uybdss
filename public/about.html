@@ -242,6 +242,90 @@
       animation: fadeUp 0.8s ease forwards 1.7s;
     }
 
+    .games-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .game-card {
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      transition: transform 0.3s, box-shadow 0.3s;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .game-card:nth-child(1) { animation: fadeUp 0.8s ease forwards 1.9s; }
+    .game-card:nth-child(2) { animation: fadeUp 0.8s ease forwards 2.1s; }
+    .game-card:nth-child(3) { animation: fadeUp 0.8s ease forwards 2.3s; }
+    .game-card:nth-child(4) { animation: fadeUp 0.8s ease forwards 2.5s; }
+
+    .game-card h3 {
+      color: var(--accent);
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .game-card p {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .community-section {
+      margin: 120px 0;
+      text-align: center;
+    }
+
+    .community-section h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.8s ease forwards 2.7s;
+    }
+
+    .community-section p {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      max-width: 900px;
+      margin: 0 auto 2rem;
+      line-height: 1.8;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.8s ease forwards 2.9s;
+    }
+
+    .join-cta {
+      display: inline-block;
+      background: var(--accent);
+      color: #000;
+      padding: 12px 36px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: transform 0.2s, background 0.3s;
+      margin-top: 1rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.8s ease forwards 3.1s;
+    }
+
+    .join-cta:hover {
+      transform: translateY(-3px);
+      background: #ff5292;
+    }
+
     @keyframes fadeUp {
       to {
         opacity: 1;
@@ -289,6 +373,15 @@
       .section-title {
         font-size: 2rem;
       }
+
+      .games-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .join-cta {
+        padding: 10px 28px;
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
@@ -318,32 +411,55 @@
       <div class="page-header">
         <h1 class="page-title">ABOUT</h1>
         <p class="page-subtitle">
-          Worship is a North American esports organization founded in 2025. Although new to the scene, our mission is clear: to grow strong, endure longer, and build a legacy that lasts.
+          Worship is a North American esports organization founded in 2025. We don’t just compete — we elevate the spirit of play. Our mission? Worship yourself. Dominate every game.
         </p>
       </div>
 
       <div class="section">
         <h2 class="section-title">MISSION</h2>
         <p class="section-content">
-          To cultivate elite talent through world-class training, mentorship, and competitive opportunities. We believe greatness is forged through discipline, community, and relentless pursuit of excellence — on and off the screen.
+          Our mission is simple: Worship yourself. Dominate every game with loyalty, focus, and fire.<br><br>
+          We believe that greatness begins with self-respect and dedication. By committing to discipline, teamwork, and creativity, we aim to leave a mark on the esports scene while empowering players to excel in and out of the game.
         </p>
       </div>
 
       <div class="section">
-        <h2 class="section-title">VISION</h2>
-        <p class="section-content">
-          To become a globally recognized esports brand known for innovation, integrity, and impact. We aim to redefine what it means to be an esports org — not just winning games, but shaping culture, empowering creators, and building something that lasts beyond the meta.
-        </p>
+        <h2 class="section-title">GAMES WE COMPETE IN</h2>
+        <div class="games-grid">
+          <div class="game-card">
+            <h3>Call of Duty</h3>
+            <p>Precision, strategy, and dominance in every firefight.</p>
+          </div>
+          <div class="game-card">
+            <h3>Valorant</h3>
+            <p>Tactical plays, crisp aim, and unrivaled communication.</p>
+          </div>
+          <div class="game-card">
+            <h3>Fortnite</h3>
+            <p>Creativity, quick-thinking, and clutch performances.</p>
+          </div>
+          <div class="game-card">
+            <h3>CS:GO</h3>
+            <p>Sharp reflexes, teamwork, and clutch round victories.</p>
+          </div>
+        </div>
       </div>
 
       <div class="section">
-        <h2 class="section-title">VALUES</h2>
+        <h2 class="section-title">OUR VALUES</h2>
         <p class="section-content">
-          <strong>Respect.</strong> For the game, the grind, and each other.<br>
-          <strong>Resilience.</strong> We rise after every loss, learn from every setback.<br>
-          <strong>Relentless.</strong> No comfort zones. No ceilings. Only growth.<br>
-          <strong>Real.</strong> Authenticity over hype. Substance over flash.
+          <strong>Loyalty.</strong> Commitment to the team and community.<br>
+          <strong>Focus.</strong> Staying sharp and disciplined in and out of the game.<br>
+          <strong>Fire.</strong> Bringing unmatched passion and energy to every competition.
         </p>
+      </div>
+
+      <div class="community-section">
+        <h2>The Worship Community</h2>
+        <p>
+          We are more than just a team—we are a family. Our community includes casual gamers, competitive players, and fans who share our love for esports. We thrive on collaboration, supporting each other, and celebrating every victory, big or small.
+        </p>
+        <a href="/apply" class="join-cta">JOIN THE MOVEMENT</a>
       </div>
     </div>
   </main>
